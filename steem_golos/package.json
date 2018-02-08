@@ -1,5 +1,5 @@
 {
-  "name": "steem_golos service",
+  "name": "steem_golos_Ethereum service",
   "version": "1.0.0",
   "description": "Connector to monitor changes to steem wallet for TxBits based exchanges",
   "main": "index.js",

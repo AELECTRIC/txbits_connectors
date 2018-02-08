@@ -27,6 +27,10 @@ networks = {
         key : config.goloskey,
         endpoint : "wss://node.golos.ws"
     }
+    ethereum : {
+        key : config.ethereumkey,
+        endpoint : "wss://node.ethereum.ws"
+    }
 }
 
 function send_funds(pending){
@@ -42,6 +46,9 @@ function send_funds(pending){
            case 'GOLOS':
                 network = networks['golos'];
            break;
+            case 'ETH' :
+            case 'ETHEREUM':
+                network = networks['ethereum']
            default :
                 console.log("Unknown network for "+withdrawal.currency);
                 return;

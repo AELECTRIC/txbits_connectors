@@ -1,3 +1,4 @@
+var ethereum = require('ethereum')
 var steem = require('steem');
 var postgres = require("pg-promise")();
 var config = require("./config.json");
@@ -15,6 +16,7 @@ args.forEach((val)=>{
     }
 });
 
+
 if(network == "steem"){
     steem.api.setWebSocket("wss://node.steem.ws");
     console.log("Network is steem");
@@ -23,7 +25,11 @@ if(network == "steem"){
         steem.api.setWebSocket("wss://node.golos.ws");
         console.log("Network is golos");
     }else{
-        console.error("You must specify a network, either steem or golos");
+        if(network == "ethereum') {
+            ethereum.api.setWebSocket("wss://node.ethereum.ws");
+            console.log("Network is Ethereum");
+    }else{
+        console.error("You must specify a network, either ethereum, steem or golos");
         process.exit(1);
     }
 }
